@@ -43,13 +43,13 @@ st.markdown("""
     /* Headings - Dark Teal */
     h1, h2, h3, h4, h5, h6, .css-10trblm {
         color: #388087 !important; 
-        font-weight: 700 !important; /* Bold */
+        font-weight: 800 !important; /* Extra Bold */
         margin-bottom: 0.5rem;
     }
     
-    h1 { font-size: 3rem !important; }
-    h2 { font-size: 2.5rem !important; }
-    h3 { font-size: 2rem !important; }
+    h1 { font-size: 3.5rem !important; }
+    h2 { font-size: 2.8rem !important; }
+    h3 { font-size: 2.2rem !important; }
     
     /* Sidebar */
     [data-testid="stSidebar"] {
@@ -59,7 +59,7 @@ st.markdown("""
     
     [data-testid="stSidebar"] h1 {
         color: #388087 !important;
-        font-size: 2.5rem !important; /* Larger Title */
+        font-size: 2.5rem !important; /* Keep Sidebar Title reasonably sized */
         font-weight: 800 !important;
     }
     
@@ -67,8 +67,8 @@ st.markdown("""
     div[data-testid="stSidebarUserContent"] .stRadio label {
         background-color: transparent !important;
         border-radius: 5px;
-        padding: 10px 15px !important;
-        margin-bottom: 5px !important;
+        padding: 8px 15px !important; /* Reduced padding */
+        margin-bottom: 2px !important;
         transition: background-color 0.3s;
     }
     
@@ -80,8 +80,8 @@ st.markdown("""
 
     /* Style the text inside the radio buttons */
     div[data-testid="stSidebarUserContent"] .stRadio label p {
-        font-size: 18px !important; /* Normal font size */
-        font-weight: 500 !important; /* Medium weight */
+        font-size: 16px !important; /* Small font size */
+        font-weight: 400 !important; /* Normal weight */
         color: #388087 !important;
     }
 
