@@ -59,7 +59,7 @@ st.markdown("""
     
     [data-testid="stSidebar"] h1 {
         color: #388087 !important;
-        font-size: 2.5rem !important; /* Keep Sidebar Title reasonably sized */
+        font-size: 2.0rem !important; /* Reduced Sidebar Title Size */
         font-weight: 800 !important;
     }
     
