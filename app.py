@@ -20,104 +20,86 @@ st.markdown("""
     /* Global Font & Reset */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
     
+    /* =========================================
+       1. Global Typography & Reset
+       ========================================= */
     html, body, [class*="css"], .stApp {
         font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
-        color: #388087 !important; /* Dark Teal Text */
-        background-color: #F6F6F2 !important; /* Lightest Shade Background */
-        background-image: none !important;
-        font-size: 18px !important;
-        font-weight: 600 !important; /* Semi-bold */
+        color: #388087 !important;
+        background-color: #F6F6F2 !important;
+        font-size: 16px !important; /* Base size */
+        font-weight: 400 !important; /* Normal weight for readability */
     }
 
-    /* Apply font family to text elements only - removed span to fix icons */
     h1, h2, h3, h4, h5, h6, p, label, button, input, select, textarea, li {
         font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
     }
     
-    /* Ensure all text in markdown is sized and dark */
-    p, li, span, label, div {
-        color: #388087 !important;
-        font-size: 18px !important;
-        font-weight: 600 !important;
-    }
-
-    /* Headings - Dark Teal */
+    /* =========================================
+       2. Headings (Hierarchy)
+       ========================================= */
     h1, h2, h3, h4, h5, h6, .css-10trblm {
         color: #388087 !important; 
-        font-weight: 800 !important; /* Extra Bold */
-        margin-bottom: 0.5rem;
+        font-weight: 800 !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1rem !important;
     }
     
-    h1 { font-size: 4.0rem !important; }
-    h2 { font-size: 3.2rem !important; }
-    h3 { font-size: 2.5rem !important; }
+    h1 { font-size: 3.0rem !important; }
+    h2 { font-size: 2.2rem !important; }
+    h3 { font-size: 1.75rem !important; }
     
-    /* Sidebar */
+    /* Metric Labels & Small Text */
+    div[data-testid="stMetric"] label {
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+    }
+    div[data-testid="stMetric"] div[data-testid="stMetricValue"] {
+        font-size: 2.5rem !important;
+    }
+
+    /* =========================================
+       3. Sidebar Styling
+       ========================================= */
     [data-testid="stSidebar"] {
-        background-color: #C2EDCE !important; /* Pale Green Sidebar */
+        background-color: #C2EDCE !important;
         border-right: 1px solid #6FB3B8 !important;
     }
     
+    /* Sidebar Section Headers */
     [data-testid="stSidebar"] h1 {
-        color: #388087 !important;
-        font-size: 3.0rem !important; /* Increased Sidebar Title */
+        font-size: 1.8rem !important; /* Distinct but balanced */
         font-weight: 800 !important;
+        margin-top: 1rem !important;
+        margin-bottom: 2rem !important;
     }
     
-    /* Navigation Text */
+    /* Navigation Links */
     div[data-testid="stSidebarUserContent"] .stRadio label {
-        background-color: transparent !important;
-        border-radius: 5px;
-        padding: 8px 15px !important; /* Reduced padding */
-        margin-bottom: 2px !important;
-        transition: background-color 0.3s;
+        padding: 10px 15px !important;
+        border-radius: 6px;
+        margin-bottom: 4px !important;
+        transition: all 0.2s ease;
     }
     
-    /* Hover effect on navigation items */
-    div[data-testid="stSidebarUserContent"] .stRadio label:hover {
-        background-color: rgba(56, 128, 135, 0.1) !important; /* Slight dark teal tint */
-        cursor: pointer;
-    }
-
-    /* Style the text inside the radio buttons */
     div[data-testid="stSidebarUserContent"] .stRadio label p {
-        font-size: 16px !important; /* Small font size */
-        font-weight: 400 !important; /* Normal weight */
+        font-size: 1rem !important; /* 16px */
+        font-weight: 500 !important; /* Medium weight */
         color: #388087 !important;
     }
 
-    /* Hide the radio button circle completely */
-    div[data-testid="stSidebarUserContent"] .stRadio div[role="radiogroup"] > label > div:first-child {
-        display: none !important;
+    div[data-testid="stSidebarUserContent"] .stRadio label:hover {
+        background-color: rgba(56, 128, 135, 0.1) !important;
     }
-    div[data-testid="stSidebarUserContent"] .stRadio div[role="radiogroup"] > label > div:nth-child(2) {
-        margin-left: 0px !important;
-    }
-
-    /* Target inner circle specifically if the first child hide is insufficient */
-    div[data-testid="stSidebarUserContent"] .stRadio div[data-baseweb="radio"] > div {
-        display: none !important;
-    }
-
-    /* Active State Styling - this is tricky with pure CSS on Streamlit Radio.
-       We can add a left border or background color to the checked item if we can target it.
-       Streamlit adds `aria-checked="true"` to the input, but CSS :has() support or finding the parent label varies.
-       Let's try a visual indicator using the text color or weight which we already boosted.
-       Or we can use a small hack with the checked sibling if structure allow.
-       
-       Structure: label > (input, div(circle), div(text))
-       Use :has() if supported or just rely on the text style for now.
-       BUT, let's try to add a left border to indicate selection if possible.
-    */
     
-    /* Active State Styling using :has() for modern browsers */
+    /* Active State (Simulated) */
     div[data-testid="stSidebarUserContent"] .stRadio label:has(input:checked) {
         background-color: #388087 !important;
-        border-right: 4px solid #F6F6F2 !important; /* Visual separator */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    
     div[data-testid="stSidebarUserContent"] .stRadio label:has(input:checked) p {
         color: #FFFFFF !important;
+        font-weight: 600 !important;
     }
     
     div[data-testid="stSidebarUserContent"] .stRadio label {
