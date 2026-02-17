@@ -195,7 +195,21 @@ st.markdown("""
         border-color: #BADFE7 !important;
         color: #388087 !important;
     }
-
+    
+    /* Dropdown menu items */
+    div[role="listbox"] li {
+        background-color: #F6F6F2 !important;
+        color: #388087 !important;
+    }
+    div[role="listbox"] li:hover, div[role="listbox"] li[aria-selected="true"] {
+        background-color: #BADFE7 !important;
+        color: #388087 !important;
+    }
+    
+    /* Selected Value in Dropdown */
+    div[data-baseweb="select"] div[data-testid="stMarkdownContainer"] p {
+        color: #388087 !important;
+    }
 
     /* Alert Boxes */
     div[data-testid="stAlert"] {
@@ -231,12 +245,22 @@ st.markdown("""
         font-size: 1rem !important;
         border: 2px solid #BADFE7;
     }
+    
+    .streamlit-expanderHeader p {
+        color: #388087 !important; /* Force text color in header */
+    }
 
     .streamlit-expanderContent {
         background-color: #F6F6F2 !important;
         color: #388087 !important;
         border: 2px solid #BADFE7 !important;
         border-top: none;
+    }
+    
+    /* DataFrame/Table Text */
+    div[data-testid="stDataFrame"] div, div[data-testid="stTable"] div {
+        color: #388087 !important;
+        background-color: #F6F6F2 !important;
     }
     
     /* Buttons */
