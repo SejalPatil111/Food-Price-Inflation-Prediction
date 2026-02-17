@@ -292,7 +292,7 @@ st.markdown("""
     div[data-testid="stTable"] div,
     div[data-testid="stTable"] span {
         color: #388087 !important;
-        background-color: #F6F6F2 !important;
+        /* background-color: #F6F6F2 !important; -- Removed to prevent hiding content */
     }
     
     /* Number Input Buttons (+/-) */
