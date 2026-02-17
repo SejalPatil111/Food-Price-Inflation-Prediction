@@ -26,7 +26,7 @@ st.markdown("""
         background-color: #F6F6F2 !important; /* Lightest Shade Background */
         background-image: none !important;
         font-size: 18px !important;
-        font-weight: 400 !important; /* Normal weight */
+        font-weight: 600 !important; /* Semi-bold */
     }
 
     /* Apply font family to text elements only - removed span to fix icons */
@@ -38,6 +38,7 @@ st.markdown("""
     p, li, span, label, div {
         color: #388087 !important;
         font-size: 18px !important;
+        font-weight: 600 !important;
     }
 
     /* Headings - Dark Teal */
@@ -47,9 +48,9 @@ st.markdown("""
         margin-bottom: 0.5rem;
     }
     
-    h1 { font-size: 3.5rem !important; }
-    h2 { font-size: 2.8rem !important; }
-    h3 { font-size: 2.2rem !important; }
+    h1 { font-size: 4.0rem !important; }
+    h2 { font-size: 3.2rem !important; }
+    h3 { font-size: 2.5rem !important; }
     
     /* Sidebar */
     [data-testid="stSidebar"] {
@@ -59,7 +60,7 @@ st.markdown("""
     
     [data-testid="stSidebar"] h1 {
         color: #388087 !important;
-        font-size: 2.0rem !important; /* Reduced Sidebar Title Size */
+        font-size: 3.0rem !important; /* Increased Sidebar Title */
         font-weight: 800 !important;
     }
     
