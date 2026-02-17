@@ -189,24 +189,35 @@ st.markdown("""
         color: #388087 !important;
     }
     
-    /* Dropdown specific */
+    /* =========================================
+       4. Component Specific Overrides
+       ========================================= */
+
+    /* Dropdown/Selectbox Background & Border */
     div[data-baseweb="select"] > div {
         background-color: #F6F6F2 !important;
         border-color: #BADFE7 !important;
         color: #388087 !important;
     }
     
-    /* Dropdown menu items */
-    div[role="listbox"] li {
+    /* Dropdown Menu Items (The list itself) */
+    ul[data-testid="stSelectboxVirtualDropdown"] {
+        background-color: #F6F6F2 !important;
+    }
+    
+    /* Individual Options */
+    li[role="option"] {
         background-color: #F6F6F2 !important;
         color: #388087 !important;
     }
-    div[role="listbox"] li:hover, div[role="listbox"] li[aria-selected="true"] {
+    
+    /* Hover/Focus State for Options */
+    li[role="option"]:hover, li[role="option"][aria-selected="true"] {
         background-color: #BADFE7 !important;
         color: #388087 !important;
     }
     
-    /* Selected Value in Dropdown */
+    /* Selected Value Display */
     div[data-baseweb="select"] div[data-testid="stMarkdownContainer"] p {
         color: #388087 !important;
     }
@@ -226,7 +237,7 @@ st.markdown("""
         color: #388087 !important;
     }
     div[data-testid="stAlert"][data-test-alert-type="error"] {
-        background-color: #F8D7DA !important; /* Fallback slightly ruddish, or use palette? Let's stay standard for error but styled */
+        background-color: #F8D7DA !important;
         border-color: #721c24 !important; 
         color: #721c24 !important;
     }
@@ -236,27 +247,45 @@ st.markdown("""
         color: #388087 !important;
     }
     
-    /* Expander */
-    .streamlit-expanderHeader {
-        color: #388087 !important;
+    /* Expander - Targeting the details/summary element specifically */
+    div[data-testid="stExpander"] {
         background-color: #FFFFFF !important;
-        font-weight: 700 !important;
-        border-radius: 8px;
-        font-size: 1rem !important;
-        border: 2px solid #BADFE7;
-    }
-    
-    .streamlit-expanderHeader p {
-        color: #388087 !important; /* Force text color in header */
+        border: 2px solid #BADFE7 !important;
+        border-radius: 8px !important;
+        color: #388087 !important;
     }
 
-    .streamlit-expanderContent {
-        background-color: #F6F6F2 !important;
+    div[data-testid="stExpander"] details {
+        background-color: #FFFFFF !important;
         color: #388087 !important;
-        border: 2px solid #BADFE7 !important;
-        border-top: none;
+    }
+
+    div[data-testid="stExpander"] summary {
+        color: #388087 !important;
+        background-color: #FFFFFF !important;
     }
     
+    div[data-testid="stExpander"] summary:hover {
+        color: #388087 !important;
+        background-color: #F6F6F2 !important;
+    }
+
+    div[data-testid="stExpander"] svg {
+        fill: #388087 !important;
+    }
+    
+    /* Force text color inside the summary */
+    div[data-testid="stExpander"] summary p {
+        color: #388087 !important;
+        font-weight: 700 !important;
+    }
+    
+    /* Content inside expander */
+    div[data-testid="stExpander"] div[data-testid="stVerticalBlock"] {
+        background-color: #F6F6F2 !important;
+        color: #388087 !important;
+    }
+
     /* DataFrame/Table Text */
     div[data-testid="stDataFrame"] div, div[data-testid="stTable"] div {
         color: #388087 !important;
