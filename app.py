@@ -286,6 +286,36 @@ st.markdown("""
         color: #388087 !important;
     }
 
+    /* DataFrame/Table Text - Targeting cells specifically */
+    div[data-testid="stDataFrame"] div, 
+    div[data-testid="stDataFrame"] span,
+    div[data-testid="stTable"] div,
+    div[data-testid="stTable"] span {
+        color: #388087 !important;
+        background-color: #F6F6F2 !important;
+    }
+    
+    /* Number Input Buttons (+/-) */
+    div[data-testid="stNumberInput"] button {
+        background-color: #388087 !important; /* Dark Teal Background */
+        color: #F6F6F2 !important; /* Light Text */
+        border-color: #388087 !important;
+    }
+    
+    div[data-testid="stNumberInput"] button:hover {
+        background-color: #2a6066 !important; /* Slightly darker on hover */
+        border-color: #2a6066 !important;
+    }
+    
+    div[data-testid="stNumberInput"] button:active {
+        background-color: #1c4044 !important;
+    }
+    
+    /* Fix for any SVG icons inside buttons that might be black */
+    div[data-testid="stNumberInput"] button svg {
+        fill: #F6F6F2 !important;
+    }
+
     /* DataFrame/Table Text */
     div[data-testid="stDataFrame"] div, div[data-testid="stTable"] div {
         color: #388087 !important;
