@@ -27,12 +27,19 @@ st.markdown("""
         font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
         color: #388087 !important;
         background-color: #F6F6F2 !important;
-        font-size: 16px !important; /* Base size */
-        font-weight: 400 !important; /* Normal weight for readability */
+        font-size: 19px !important; /* Increased base size */
+        font-weight: 500 !important; /* Added weight */
     }
 
     h1, h2, h3, h4, h5, h6, p, label, button, input, select, textarea, li {
         font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+    }
+    
+    /* Input Labels & Markdown Text */
+    p, label, li, .stSelectbox label, .stNumberInput label, .stSlider label, .stDateInput label {
+        font-size: 19px !important;
+        font-weight: 600 !important; /* Heavier for readability */
+        color: #388087 !important;
     }
     
     /* =========================================
@@ -45,17 +52,17 @@ st.markdown("""
         margin-bottom: 1rem !important;
     }
     
-    h1 { font-size: 3.0rem !important; }
-    h2 { font-size: 2.2rem !important; }
-    h3 { font-size: 1.75rem !important; }
+    h1 { font-size: 3.2rem !important; }
+    h2 { font-size: 2.4rem !important; }
+    h3 { font-size: 1.9rem !important; }
     
     /* Metric Labels & Small Text */
     div[data-testid="stMetric"] label {
-        font-size: 1.1rem !important;
-        font-weight: 600 !important;
+        font-size: 1.2rem !important;
+        font-weight: 700 !important;
     }
     div[data-testid="stMetric"] div[data-testid="stMetricValue"] {
-        font-size: 2.5rem !important;
+        font-size: 2.8rem !important;
     }
 
     /* =========================================
@@ -68,7 +75,7 @@ st.markdown("""
     
     /* Sidebar Section Headers */
     [data-testid="stSidebar"] h1 {
-        font-size: 1.8rem !important; /* Distinct but balanced */
+        font-size: 2.0rem !important;
         font-weight: 800 !important;
         margin-top: 1rem !important;
         margin-bottom: 2rem !important;
@@ -76,15 +83,15 @@ st.markdown("""
     
     /* Navigation Links */
     div[data-testid="stSidebarUserContent"] .stRadio label {
-        padding: 10px 15px !important;
+        padding: 12px 15px !important; /* Increased padding for larger text */
         border-radius: 6px;
-        margin-bottom: 4px !important;
+        margin-bottom: 6px !important;
         transition: all 0.2s ease;
     }
     
     div[data-testid="stSidebarUserContent"] .stRadio label p {
-        font-size: 1rem !important; /* 16px */
-        font-weight: 500 !important; /* Medium weight */
+        font-size: 20px !important; /* Increased Nav Link Size */
+        font-weight: 600 !important; /* Increased Nav Link Weight */
         color: #388087 !important;
     }
 
@@ -99,7 +106,7 @@ st.markdown("""
     }
     div[data-testid="stSidebarUserContent"] .stRadio label:has(input:checked) p {
         color: #FFFFFF !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
     }
     
     div[data-testid="stSidebarUserContent"] .stRadio label {
