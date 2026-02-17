@@ -316,12 +316,6 @@ st.markdown("""
         fill: #F6F6F2 !important;
     }
 
-    /* DataFrame/Table Text */
-    div[data-testid="stDataFrame"] div, div[data-testid="stTable"] div {
-        color: #388087 !important;
-        background-color: #F6F6F2 !important;
-    }
-    
     /* Buttons */
     .stButton > button {
         background-color: #388087; /* Dark Teal */
